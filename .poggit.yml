@@ -2,6 +2,6 @@
 branches:
 - master
 projects:
-  pocketmine-1vs1-plugin:
+  1vs1:
     path: ""
 ...
