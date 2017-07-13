@@ -1,4 +1,8 @@
-### 1vs1 plugin by Minifixio
+### 1vs1 plugin by Minifixio, edited by Zeao.
+
+## PUBLIC SERVER
+IP - voidminigamespe.pocketmine.live
+Port - 19132
 
 ### Description:
 You want to make 1vs1s on your MCPE server ? This plugin is for you !
