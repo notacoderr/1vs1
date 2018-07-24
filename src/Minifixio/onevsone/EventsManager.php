@@ -10,11 +10,8 @@ use pocketmine\block\Block;
 use pocketmine\tile\Sign;
 
 use pocketmine\event\Listener;
-use pocketmine\event\entity\EntityDeathEvent;
-use pocketmine\event\player\PlayerDeathEvent;
-use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\event\entity\{EntityDamageByEntityEvent, EntityDeathEvent};
+use pocketmine\event\player\{PlayerJoinEvent, PlayerQuitEvent, PlayerDeathEvent};
 use pocketmine\event\block\SignChangeEvent;
 use pocketmine\utils\TextFormat;
 

@@ -2,17 +2,11 @@
 
 namespace Minifixio\onevsone\command;
 
-use pocketmine\command\Command;
-use pocketmine\command\PluginIdentifiableCommand;
-use pocketmine\command\CommandSender;
+use pocketmine\command\{PluginIdentifiableCommand, CommandSender, Command};
 use pocketmine\level\Location;
-use pocketmine\Player;
-use pocketmine\Server;
+use pocketmine\{Server, Player};
 use pocketmine\utils\TextFormat;
-
-
-use Minifixio\onevsone\OneVsOne;
-use Minifixio\onevsone\ArenaManager;
+use Minifixio\onevsone\{ArenaManager, OneVsOne};
 
 /**
  * Command to reference a new Arena in the pool 
@@ -33,7 +27,7 @@ class ReferenceArenaCommand extends Command {
 		$this->arenaManager = $arenaManager;
 	}
 
-	public function execute(CommandSender $sender, $label, array $params){
+	public function execute(CommandSender $sender, string $label, array $params){
 		if(!$this->plugin->isEnabled()){
 			return false;
 		}

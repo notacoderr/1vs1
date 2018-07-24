@@ -2,18 +2,14 @@
 
 namespace Minifixio\onevsone;
 
-use Minifixio\onevsone\model\Arena;
+use Minifixio\onevsone\model\{SignRefreskTask, Arena};
 use Minifixio\onevsone\utils\PluginUtils;
-use Minifixio\onevsone\model\SignRefreshTask;
 use Minifixio\onevsone\OneVsOne;
 
-use pocketmine\Server;
-use pocketmine\Player;
-use pocketmine\level\Location;
-use pocketmine\level\Position;
-use pocketmine\utils\Config;
+use pocketmine\{Player, Server};
+use pocketmine\level\{Position, Location};
+use pocketmine\utils\{TextFormat, Config};
 use pocketmine\tile\Sign;
-use pocketmine\utils\TextFormat;
 
 /**
  * Manages PVP arenas
@@ -65,7 +61,7 @@ class ArenaManager{
 		// Launch sign refreshing task
 		$task = new SignRefreshTask(OneVsOne::getInstance());
 		$task->arenaManager = $this;
-		$this->signRefreshTaskHandler = $this->getServer()->getScheduler()->scheduleRepeatingTask($task, self::SIGN_REFRESH_DELAY * 20); //Using a Static Function(Server::getInstance is bad practise! Fixed this.
+		$this->signRefreshTaskHandler = $this->getScheduler()->scheduleRepeatingTask($task, self::SIGN_REFRESH_DELAY * 20); //Using a Static Function(Server::getInstance is bad practise! Fixed this.
 	}
 	
 	/**

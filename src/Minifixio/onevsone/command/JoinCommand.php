@@ -2,12 +2,9 @@
 
 namespace Minifixio\onevsone\command;
 
-use pocketmine\command\Command;
-use pocketmine\command\PluginIdentifiableCommand;
-use pocketmine\command\CommandSender;
+use pocketmine\command\{PluginIdentifiableCommand, CommandSender, Command};
 use pocketmine\level\Level;
-use pocketmine\Player;
-use pocketmine\Server;
+use pocketmine\{Server, Player};
 use pocketmine\utils\TextFormat;
 
 use Minifixio\onevsone\OneVsOne;
@@ -27,11 +24,11 @@ class JoinCommand extends Command implements PluginIdentifiableCommand{
 		$this->arenaManager = $arenaManager;
 	}
 
-	public function getPlugin(){
+	public function getPlugin(): onevsone{
 		return $this->plugin;
 	}
 
-	public function execute(CommandSender $sender, $label, array $params){
+	public function execute(CommandSender $sender, string $label, array $params){
 		if(!$this->plugin->isEnabled()){
 			return false;
 		}

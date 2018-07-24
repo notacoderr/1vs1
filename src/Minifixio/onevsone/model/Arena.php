@@ -2,23 +2,19 @@
 
 namespace Minifixio\onevsone\model;
 
-use Minifixio\onevsone\OneVsOne;
+use Minifixio\onevsone\{ArenaManager, OneVsOne};
 use Minifixio\onevsone\utils\PluginUtils;
 
-use pocketmine\Player;
-use pocketmine\Server;
+use pocketmine\{Server, Player};
 use pocketmine\level\Position;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat;
-use pocketmine\entity\Effect;
-use pocketmine\entity\InstantEffect;
+use pocketmine\entity\{InstantEffect, Effect};
 use pocketmine\math\Vector3;
-use pocketmine\level\particle\SmokeParticle;
+use pocketmine\level\particle\{DestroyBlockParticle, SmokeParticle};
 use pocketmine\block\Block;
-use pocketmine\level\particle\DestroyBlockParticle;
 
 use \DateTime;
-use Minifixio\onevsone\ArenaManager;
 
 class Arena{
 
@@ -81,7 +77,7 @@ class Arena{
 	 */
 	public function startDuel(){
 		
-		Server::getInstance()->getScheduler()->cancelTask($this->countdownTaskHandler->getTaskId());
+		$this->plugin->getScheduler()->cancelTask($this->countdownTaskHandler->getTaskId());
 		
 		$player1 = $this->players[0];
 		$player2 = $this->players[1];
@@ -115,14 +111,14 @@ class Arena{
 		// Launch the end round task
 		$task = new RoundCheckTask(OneVsOne::getInstance());
 		$task->arena = $this;
-		$this->taskHandler = Server::getInstance()->getScheduler()->scheduleDelayedTask($task, self::ROUND_DURATION * 20);
+		$this->taskHandler = $this->plugin->getScheduler()->scheduleDelayedTask($task, self::ROUND_DURATION * 20);
 	}
 	
 	/**
 	 * Abort duel during countdown if one of the players has quit
 	 */
 	public function abortDuel(){
-		Server::getInstance()->getScheduler()->cancelTask($this->countdownTaskHandler->getTaskId());
+		$this->plugin->getScheduler()->cancelTask($this->countdownTaskHandler->getTaskId());
 	}
 	
 	private function giveKit(Player $player){
@@ -139,7 +135,7 @@ class Arena{
 		$player->getInventory()->setChestplate(Item::get(303, 0, 1));
 		$player->getInventory()->setLeggings(Item::get(304, 0, 1));
 		$player->getInventory()->setBoots(Item::get(305, 0, 1));
-		$player->getInventory()->sendArmorContents($player);
+		$player->getArmorInventory()->sendContents($player);
 		
 		// Set his life to 20
 		$player->setHealth(20);
@@ -186,14 +182,15 @@ class Arena{
    		foreach ($this->players as $player){
    			$player->getInventory()->setItemInHand(new Item(Item::AIR,0,0));
    			$player->getInventory()->clearAll();
-   			$player->getInventory()->sendArmorContents($player);
+                        $player->getArmorInventory()->clearAll();
+                        $player->getArmorInventory()->sendContents($player);
    			$player->getInventory()->sendContents($player);
    			$player->getInventory()->sendHeldItem($player);
    		}
    		$this->players = array();
    		$this->startTime = NULL;
    		if($this->taskHandler != NULL){
-   			Server::getInstance()->getScheduler()->cancelTask($this->taskHandler->getTaskId());
+   			$this->plugin->getScheduler()->cancelTask($this->taskHandler->getTaskId());
    			$this->manager->notifyEndOfRound($this);
    		}
    }

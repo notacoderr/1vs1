@@ -2,15 +2,15 @@
 
 namespace Minifixio\onevsone\model;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 use pocketmine\utils\TextFormat;
 
 
-class RoundCheckTask extends PluginTask{
+class RoundCheckTask extends Task{
 	
 	public $arena;
 	
-	public function onRun($currentTick){
+	public function onRun(int $currentTick): void{
 		$this->arena->onRoundEnd();
 	}
 	

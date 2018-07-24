@@ -4,13 +4,10 @@ namespace Minifixio\onevsone;
 
 use pocketmine\plugin\PluginBase;
 
-use Minifixio\onevsone\ArenaManager;
-use Minifixio\onevsone\EventsManager;
+use Minifixio\onevsone\{EventsManager, ArenaManager};
 use Minifixio\onevsone\utils\PluginUtils;
-use Minifixio\onevsone\command\JoinCommand;
-use Minifixio\onevsone\command\ReferenceArenaCommand;
-use pocketmine\utils\Config;
-use pocketmine\utils\TextFormat;
+use Minifixio\onevsone\command\{ReferenceArenaCommand, JoinCommand};
+use pocketmine\utils\{TextFormat, Config};
 use pocketmine\Server;
 
 
@@ -32,7 +29,7 @@ class OneVsOne extends PluginBase{
 	/**
 	* Plugin is enabled by PocketMine server
 	*/
-    public function onEnable(){
+    public function onEnable(): void{
     	self::$instance = $this;
     	PluginUtils::logOnConsole(TextFormat::GREEN . "Init" . TextFormat::RED ." 1vs1 " . TextFormat::GREEN. "plugin");
     	
@@ -61,7 +58,7 @@ class OneVsOne extends PluginBase{
     	$this->getServer()->getCommandMap()->register($referenceArenaCommand->commandName, $referenceArenaCommand);    	
     }
     
-    public static function getInstance(){
+    public static function getInstance(): OneVsOne{
     	return self::$instance;
     }
     
@@ -69,7 +66,7 @@ class OneVsOne extends PluginBase{
     	return str_replace("&", "§", self::$instance->messages->get($key));
     }
     
-    public function onDisable() {
+    public function onDisable(): void {
  
     }
 
