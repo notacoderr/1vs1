@@ -69,7 +69,7 @@ class Arena{
 
 		// Create a new countdowntask
 		$task = new CountDownToDuelTask(OneVsOne::getInstance(), $this);
-		$this->countdownTaskHandler = Server::getInstance()->getScheduler()->scheduleDelayedRepeatingTask($task, 20, 20);	
+		$this->countdownTaskHandler = $this->plugin->getScheduler()->scheduleDelayedRepeatingTask($task, 20, 20);	
 	}
 	
 	/**
@@ -215,6 +215,8 @@ class Arena{
    			$player->sendMessage(OneVsOne::getMessage("duel_timeover"));
    			$player->sendMessage(TextFormat::BOLD . "++++++++=++++++++");
    			$player->removeAllEffects();
+                        $player->getArmorInventory()->clearAll();
+                        $player->getInventory()->clearAll();
    		}
    		
    		// Reset arena

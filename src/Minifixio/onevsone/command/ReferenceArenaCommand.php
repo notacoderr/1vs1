@@ -2,7 +2,7 @@
 
 namespace Minifixio\onevsone\command;
 
-use pocketmine\command\{PluginIdentifiableCommand, CommandSender, Command};
+use pocketmine\command\{CommandSender, Command};
 use pocketmine\level\Location;
 use pocketmine\{Server, Player};
 use pocketmine\utils\TextFormat;
@@ -33,7 +33,7 @@ class ReferenceArenaCommand extends Command {
 		}
 
 		if(!$sender instanceof Player){
-			$sender->sendMessage("Please use the command in-game");
+			$sender->sendMessage(OneVsOne::getMessage("console_only"));
 			return true;
 		}
 		
@@ -48,13 +48,13 @@ class ReferenceArenaCommand extends Command {
 		$this->arenaManager->referenceNewArena($playerLocation);
 		
 		// Notify the op
-		$sender->sendMessage("[1vs1] A new arena has been created at your position ! There are " . $this->arenaManager->getNumberOfArenas() ." arenas.");
+		$sender->sendMessage(str_replace("{arenacount}", ($this->arenaManager->getNumberOfArenas() . TextFormat::RESET . OneVsOne::getMessage("pluginprefix "). OneVsOne::getMessage("arena_created"))));
 		
 		return true;
 		}
 		
 		else{
-			$sender->sendMessage(TextFormat::RED . "You must be op for use this command !");
+			$sender->sendMessage(OneVsOne::getMessage("op_only"));
 		}
 	}
 }

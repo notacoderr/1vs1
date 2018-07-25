@@ -17,11 +17,11 @@ class PluginUtils{
 	 */
 	public static function logOnConsole($message){
 		$logger = Server::getInstance()->getLogger();
-		$logger->info("[1vs1] " . $message);
+		$logger->info(OneVsOne::getMessage("pluginprefix ") . $message);
 	}
 
 	public static function sendDefaultMessage($player, $message){
-		$player->sendMessage(TextFormat::GOLD . TextFormat::BOLD . OneVsOne::getMessage("pluginprefix") . TextFormat::WHITE . $message);
+		$player->sendMessage(TextFormat::GOLD . TextFormat::BOLD . OneVsOne::getMessage("pluginprefix ") . TextFormat::WHITE . $message);
 	}
 }
 

@@ -58,7 +58,7 @@ class OneVsOne extends PluginBase{
     	$this->getServer()->getCommandMap()->register($referenceArenaCommand->commandName, $referenceArenaCommand);    	
     }
     
-    public static function getInstance(): OneVsOne{
+    public static function getInstance(): self{
     	return self::$instance;
     }
     

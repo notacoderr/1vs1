@@ -6,7 +6,10 @@
 ###############
 #Plugin Settings
 ###############
-pluginprefix: "[1vs1]"
+pluginprefix: "&7[&6&l1&4vs&61&r&7]"
+console_only: "You must be in console to execute this command."
+op_only: "&2You must be OP to use this command."
+arena_created: "&dYou have created a new arena at your location! There are now &5{arenacount} &darenas!"
 
 ###############
 #Queue messages
@@ -15,6 +18,7 @@ queue_join: "You've joined the &41vs1 &fqueue"
 queue_playersinqueue: "Waiting players :&2 "
 queue_popup: "&4» You've joined the 1vs1 queue"
 queue_alreadyinqueue: "&4You are already in the queue !"
+no_freearena: "There is currently no free arenas available, or they are all in use."
 
 ##############
 #Duel messages
@@ -29,6 +33,12 @@ duel_timeover: "&f&l++++++++=++++++++\n&6> Playing time &6over&6, no winners !\n
 countdown_timer: "&a&lDuel will be starting in &r&b{CD} &cseconds..."
 #Use {CD} for countdown timer. {CD} is how many seconds before the game / 1v1 starts.
 
+start_duel: "&aStarting duel - &b{rp0}"
+## Start the duel. This option allows you to change the starting message. Use {rp0} as the sender in their respective. {rp0} will and should automatically replace with the sender name, or the player in that respective.
+
+start_duel_against: "&aVS &b{rp1}"
+## This option allows you to change the message of who they're going against. {rp1} is the second player that they're going against.
+## So the message should show up as: Starting duel - 1st player (me) vs 2nd player (other person) 
 ###############
 #Arena messages
 ###############
