@@ -1,13 +1,9 @@
 ### 1vs1 plugin by Minifixio, edited by Zeao.
 
-## PUBLIC SERVER
-IP - voidminigamespe.pocketmine.live
-Port - 19132
-
 ### Description:
-You want to make 1vs1s on your MCPE server ? This plugin is for you !
+Do you want to make 1vs1 matches on your MCPE server? Then this plugin is for you!
 
-Cool things:
+## Features
 -> Multi arenas system
 -> Auto queue management
 -> Statistics signs
@@ -31,15 +27,14 @@ Cool things:
 
 
 ### Commands:
--> /match : join the 1vs1 queue
--> /refarena : reference a new arena.
+-> /match : join the 1vs1 queue (Everyone can use that command)
+-> /refarena : reference a new arena - OPS only
 
 
 ### Notes:
--> Maybe you will find some mistakes in my plugin documentation, it’s just because i’m not english (french :c).
 
--> You can only change the messages in the plugin source but soon you will can change it in a message config file.
+-> You can now change some messages in messages.yml file. We'll add more relating to this soon.
 
 -> You will able to change the spawn distance in a arena and the timers for the matches in an update soon.
 
--> Any remarks ? Tell me it for a better world x) !
+-> Any remarks? Let us know, by opening a new issue.
