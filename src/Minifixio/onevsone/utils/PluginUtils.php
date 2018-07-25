@@ -4,10 +4,11 @@ namespace Minifixio\onevsone\utils;
 
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
+use Minifixio\onevsone\OneVsOne;
 
 
 /**
- * Utility methods for my plugin
+ * Utility methods for 1vs1 plugin
  */
 class PluginUtils{
 	
@@ -20,7 +21,7 @@ class PluginUtils{
 	}
 
 	public static function sendDefaultMessage($player, $message){
-		$player->sendMessage(TextFormat::GOLD . TextFormat::BOLD . "[1vs1] " . TextFormat::WHITE . $message);
+		$player->sendMessage(TextFormat::GOLD . TextFormat::BOLD . OneVsOne::getMessage("pluginprefix") . TextFormat::WHITE . $message);
 	}
 }
 

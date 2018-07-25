@@ -125,16 +125,16 @@ class Arena{
 		// Clear inventory
 		$player->getInventory()->clearAll();
 		
-		// Give sword, food and armor
+		// Give sword, and food
 		$player->getInventory()->addItem(Item::get(ITEM::IRON_SWORD));
 		$player->getInventory()->addItem(Item::get(ITEM::BREAD));
 		$player->getInventory()->setItemInHand(Item::get(ITEM::IRON_SWORD), $player);
 		
 		// Pur the armor on the player
-		$player->getInventory()->setHelmet(Item::get(302, 0, 1));
-		$player->getInventory()->setChestplate(Item::get(303, 0, 1));
-		$player->getInventory()->setLeggings(Item::get(304, 0, 1));
-		$player->getInventory()->setBoots(Item::get(305, 0, 1));
+		$player->getArmorInventory()->setHelmet(Item::get(302, 0, 1));
+		$player->getArmorInventory()->setChestplate(Item::get(303, 0, 1));
+		$player->getArmorInventory()->setLeggings(Item::get(304, 0, 1));
+		$player->getArmorInventory()->setBoots(Item::get(305, 0, 1));
 		$player->getArmorInventory()->sendContents($player);
 		
 		// Set his life to 20
@@ -177,7 +177,7 @@ class Arena{
     * Reset the Arena to current state
     */
    private function reset(){
-   		// Put active a rena after the duel
+   		// Put active arena after the duel
    		$this->active = FALSE;
    		foreach ($this->players as $player){
    			$player->getInventory()->setItemInHand(new Item(Item::AIR,0,0));

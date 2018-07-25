@@ -5,6 +5,7 @@ namespace Minifixio\onevsone\model;
 use pocketmine\scheduler\Task;
 use pocketmine\utils\TextFormat;
 use pocketmine\plugin\Plugin;
+use Minifixio\onevsone\OneVsOne;
 
 
 class CountDownToDuelTask extends Task{
@@ -32,8 +33,8 @@ class CountDownToDuelTask extends Task{
 				$this->arena->abortDuel();
 			}
 			else{
-				$player1->sendTip(TextFormat::GOLD . TextFormat::BOLD . $this->countdownValue . TextFormat::RESET . " sec...");
-				$player2->sendTip(TextFormat::GOLD . TextFormat::BOLD . $this->countdownValue . TextFormat::RESET . " sec...");
+				$player1->sendTip(TextFormat::GOLD . TextFormat::BOLD . str_replace("{CD}", ($this->countdownValue . TextFormat::RESET . OneVsOne::getMessage("countdown_timer"))));
+				$player2->sendTip(TextFormat::GOLD . TextFormat::BOLD . str_replace("{CD}", ($this->countdownValue . TextFormat::RESET . OneVsOne::getMessage("countdown_timer"))));
 				$this->countdownValue--;
 				
 				// If countdown is finished, start the duel and stop the task

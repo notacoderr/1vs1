@@ -1,8 +1,13 @@
 # Messages 1vs1 config.
 # Use colors with "&" or "§". You can find any help about formating codes here : http://minecraft.gamepedia.com/Formatting_codes .
 # Plugin by Minifixio.
-
 ---
+
+###############
+#Plugin Settings
+###############
+pluginprefix: "[1vs1]"
+
 ###############
 #Queue messages
 ###############
@@ -21,6 +26,8 @@ duel_winner: "&6&l> You won the duel against :&4 "
 duel_loser: "&6&l> You've lost the duel against :&4 "
 duel_broadcast: "&6&l won a duel against "
 duel_timeover: "&f&l++++++++=++++++++\n&6> Playing time &6over&6, no winners !\n&6> Be faster next time !\n&f&l++++++++=++++++++"
+countdown_timer: "&a&lDuel will be starting in &r&b{CD} &cseconds..."
+#Use {CD} for countdown timer. {CD} is how many seconds before the game / 1v1 starts.
 
 ###############
 #Arena messages
