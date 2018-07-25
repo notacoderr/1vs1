@@ -24,7 +24,7 @@ class OneVsOne extends PluginBase{
 	
 	public $messages;
 	
-	CONST SIGN_TITLE = '[1vs1]';
+	public CONST SIGN_TITLE = '[1vs1]';
 	
 	/**
 	* Plugin is enabled by PocketMine server
@@ -57,13 +57,22 @@ class OneVsOne extends PluginBase{
     	$referenceArenaCommand = new ReferenceArenaCommand($this, $this->arenaManager);
     	$this->getServer()->getCommandMap()->register($referenceArenaCommand->commandName, $referenceArenaCommand);    	
     }
-    
+    public function getPrefix() {
+      $prefix = $this->messages->get("pluginprefix");
+      $finalPrefix = str_replace("&", "§", $prefix);
+      return $finalPrefix . " ";
+    }
     public static function getInstance(): self{
     	return self::$instance;
     }
-    
-    public static function getMessage($key){
-    	return str_replace("&", "§", self::$instance->messages->get($key));
+    public static function getMessage(string $message = ""){
+    	$msg = $this->messages->get($message);
+      if($msg != null) {
+      $finalMessage = str_replace("&", "§", TextFormat::ESCAPE, $msg);
+      return $finalMessage;
+      } else {
+        return $this->getPrefix() . "Message not found.";
+      }
     }
     
     public function onDisable(): void {
