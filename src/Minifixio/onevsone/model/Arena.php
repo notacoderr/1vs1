@@ -30,7 +30,7 @@ class Arena{
 	private $manager;
 	
 	// Roound duration (3min)
-	publix const
+	public const
         ROUND_DURATION = 180,
 	PLAYER_1_OFFSET_X = 5,
 	PLAYER_2_OFFSET_X = -5;
