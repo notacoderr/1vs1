@@ -2,9 +2,9 @@
 
 namespace Minifixio\onevsone;
 
-use Minifixio\onevsone\model\{SignRefreskTask, Arena};
+use Minifixio\onevsone\Tasks\SignRefreskTask;
 use Minifixio\onevsone\utils\PluginUtils;
-use Minifixio\onevsone\OneVsOne;
+use Minifixio\onevsone\{Arena, OneVsOne};
 use pocketmine\{Player, Server};
 use pocketmine\level\{Position, Location};
 use pocketmine\utils\{TextFormat, Config};

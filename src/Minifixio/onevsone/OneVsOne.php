@@ -5,7 +5,7 @@ namespace Minifixio\onevsone;
 use pocketmine\plugin\PluginBase;
 use Minifixio\onevsone\{EventsManager, ArenaManager};
 use Minifixio\onevsone\utils\PluginUtils;
-use Minifixio\onevsone\command\{ReferenceArenaCommand, JoinCommand};
+use Minifixio\onevsone\Commands\{ReferenceArenaCommand, JoinCommand};
 use pocketmine\utils\{TextFormat, Config};
 use pocketmine\Server;
 
