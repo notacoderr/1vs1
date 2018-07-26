@@ -1,4 +1,6 @@
 --- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/ZPlayzMCPE/pocketmine-1vs1-plugin
+branches:
+- not_ready
 projects:
   1vs1:
     path: ""
