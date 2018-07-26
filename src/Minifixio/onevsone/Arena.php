@@ -120,7 +120,7 @@ class Arena{
 		$task->arena = $this;
 		$this->taskHandler = $this->plugin->getScheduler()->scheduleDelayedTask($task, $this->duration * 20);
 	}
-	
+        }
 	/**
 	 * Abort duel during countdown if one of the players has quit
 	 */
@@ -202,7 +202,7 @@ class Arena{
    			$this->manager->notifyEndOfRound($this);
    		}
    }
-   
+   }
    /**
     * When a player quit the game
     * @param Player $loser

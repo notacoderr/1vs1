@@ -6,7 +6,7 @@ use pocketmine\scheduler\Task;
 use pocketmine\utils\TextFormat;
 use pocketmine\plugin\Plugin;
 
-class GameTime extends PluginTask{
+class GameTimeTask extends PluginTask{
 	
 	private $roundDuration = 180;
 	

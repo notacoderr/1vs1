@@ -187,7 +187,7 @@ class ArenaManager{
          Server::getInstance()->getLogger()->debug("[1vs1] - Starting duel : " . $roundPlayers[0]->getName() . " vs " . $roundPlayers[1]->getName());
          $freeArenafinal->startRound($roundPlayers);
         }
-	
+        }
 	/**
 	 * Allows to be notify when rounds ends
 	 * @param Arena $arena
@@ -225,7 +225,6 @@ class ArenaManager{
 		array_push($arenas, [[$spawn1->getX(), $spawn1->getY(), $spawn1->getZ(), $spawn1->getYaw(), $spawn1->getPitch()], [$spawn2->getX(), $spawn2->getY(), $spawn2->getZ(), $spawn2->getYaw(), $spawn2->getPitch()], $spawn1->getLevel()->getName()]);
  		$this->config->set("arenas", $arenas);
  		$this->config->save();		
- 	}
 
 		$this->config->set("arenas", $arenas);
 		$this->config->save();		
