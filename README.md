@@ -33,8 +33,4 @@ Do you want to make 1vs1 matches on your MCPE server? Then this plugin is for yo
 
 ### Notes:
 
--> You can now change some messages in messages.yml file. We'll add more relating to this soon.
-
--> You will able to change the spawn distance in a arena and the timers for the matches in an update soon.
-
 -> Any remarks? Let us know, by opening a new issue.
