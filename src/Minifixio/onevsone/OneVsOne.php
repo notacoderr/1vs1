@@ -3,7 +3,6 @@
 namespace Minifixio\onevsone;
 
 use pocketmine\plugin\PluginBase;
-
 use Minifixio\onevsone\{EventsManager, ArenaManager};
 use Minifixio\onevsone\utils\PluginUtils;
 use Minifixio\onevsone\command\{ReferenceArenaCommand, JoinCommand};

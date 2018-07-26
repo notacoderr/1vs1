@@ -27,7 +27,7 @@ class ArenaManager{
 	/** @var Tiles[] **/
 	private $signTiles = array();
 
-	const SIGN_REFRESH_DELAY = 5;
+	public const SIGN_REFRESH_DELAY = 5;
 	private $signRefreshTaskHandler;
 	
 	/**

@@ -13,7 +13,6 @@ use pocketmine\entity\{InstantEffect, Effect};
 use pocketmine\math\Vector3;
 use pocketmine\level\particle\{DestroyBlockParticle, SmokeParticle};
 use pocketmine\block\Block;
-
 use \DateTime;
 
 class Arena{
@@ -31,10 +30,10 @@ class Arena{
 	private $manager;
 	
 	// Roound duration (3min)
-	const ROUND_DURATION = 180;
-	
-	const PLAYER_1_OFFSET_X = 5;
-	const PLAYER_2_OFFSET_X = -5;
+	publix const
+        ROUND_DURATION = 180,
+	PLAYER_1_OFFSET_X = 5,
+	PLAYER_2_OFFSET_X = -5;
 	
 	// Variable for stop the round's timer
 	private $taskHandler;

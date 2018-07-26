@@ -3,12 +3,9 @@
 namespace Minifixio\onevsone;
 
 use Minifixio\onevsone\utils\PluginUtils;
-
-use pocketmine\tile\Tile;
+use pocketmine\tile\{Sign, Tile};
 use pocketmine\item\Item;
 use pocketmine\block\Block;
-use pocketmine\tile\Sign;
-
 use pocketmine\event\Listener;
 use pocketmine\event\entity\{EntityDamageByEntityEvent, EntityDeathEvent};
 use pocketmine\event\player\{PlayerJoinEvent, PlayerQuitEvent, PlayerDeathEvent};
