@@ -9,7 +9,6 @@
 pluginprefix: "&7[&6&l1&4vs&61&r&7]"
 console_only: "You must be in console to execute this command."
 op_only: "&2You must be OP to use this command."
-arena_created: "&dYou have created a new arena at your location! There are now &5{arenacount} &darenas!"
 
 ###############
 #Queue messages
@@ -42,5 +41,8 @@ start_duel_against: "&aVS &b{rp1}"
 ###############
 #Arena messages
 ###############
+arena_pos1: "&aSpawn position 1 set succesfully."
+arena_pos2: "&aSpawn position 2 set succesfully."
+arena_created: "&dYou have created a new arena at your location! There are now &5{arenacount} &darenas!"
 arena_alreadyinarena: "&4You are already in a arena !"
 ...

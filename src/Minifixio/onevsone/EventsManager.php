@@ -8,7 +8,7 @@ use pocketmine\item\Item;
 use pocketmine\block\Block;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\{EntityDamageByEntityEvent, EntityDeathEvent};
-use pocketmine\event\player\{PlayerJoinEvent, PlayerQuitEvent, PlayerDeathEvent};
+use pocketmine\event\player\{PlayerJoinEvent, PlayerInteractEvent, PlayerQuitEvent, PlayerDeathEvent};
 use pocketmine\event\block\SignChangeEvent;
 use pocketmine\utils\TextFormat;
 
@@ -58,7 +58,16 @@ class EventsManager implements Listener{
 			}
 		}
 	}
+public function onInteract(PlayerInteractEvent $e) {
+    if($e->getAction() == PlayerInteractEvent::LEFT_CLICK_BLOCK) {
+    $block = $e->getBlock()->getId();
+      if($block == Item::SIGN_POST || $block == Block::SIGN_POST || $block == Block::WALL_SIGN) {
+         $tile = $e->getPlayer()->getLevel()->getTile($e->getBlock()->getTile());
+            $this->arenaManager->addNewPlayerToQueue($e->getPlayer());
+          }
+       }
+    }
+
+
+
 }
-
-
-
