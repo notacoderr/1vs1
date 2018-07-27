@@ -68,12 +68,12 @@ class OneVsOne extends PluginBase{
     	return self::$instance;
     }
     public static function getMessage(string $message = ""){
-    	$msg = $this->messages->get($message);
+    	$msg = self::$instance->messages->get($message);
       if($msg != null) {
       $finalMessage = str_replace("&", "§", TextFormat::ESCAPE, $msg);
       return $finalMessage;
       } else {
-        return $this->getPrefix() . "Message not found.";
+        return self::$instance->getPrefix() . "Message not found.";
       }
     }
     
