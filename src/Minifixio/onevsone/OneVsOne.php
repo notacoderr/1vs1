@@ -30,7 +30,7 @@ class OneVsOne extends PluginBase{
 	*/
     public function onEnable(): void{
     	self::$instance = $this;
-    	PluginUtils::logOnConsole(TextFormat::GREEN . "Init" . TextFormat::RED ." 1vs1 " . TextFormat::GREEN. "plugin");
+    	#PluginUtils::logOnConsole(TextFormat::GREEN . "Init" . TextFormat::RED ." 1vs1 " . TextFormat::GREEN. "plugin");
     	
     	// Get arena positions from arenas.yml
     	@mkdir($this->getDataFolder());
@@ -67,12 +67,12 @@ class OneVsOne extends PluginBase{
     	return self::$instance;
     }
     public static function getMessage(string $message = null){
-    	$msg = self::$instance->messages->get($message);
+    	$msg = $this->messages->get($message);
       if($msg != null) {
       $finalMessage = str_replace("&", "§", TextFormat::ESCAPE, $msg);
       return $finalMessage;
       } else {
-        return self::$instance->getPrefix() . "Message not found.";
+        return $this->getPrefix() . "Message not found.";
       }
     }
     
