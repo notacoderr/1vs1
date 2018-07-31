@@ -60,9 +60,8 @@ class OneVsOne extends PluginBase{
     	$this->getServer()->getCommandMap()->register($arenaCommand->commandName, $arenaCommand);    	
     }
     public function getPrefix() {
-      $prefix = $this->messages->get("pluginprefix");
-      $finalPrefix = str_replace("&", "§", $prefix);
-      return $finalPrefix . " ";
+	$prefix = (string) "§l§7[§c1vs1§7] ";
+      return $prefix;
     }
     public static function getInstance(): self{
     	return self::$instance;
