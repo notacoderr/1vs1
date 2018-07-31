@@ -67,7 +67,7 @@ class OneVsOne extends PluginBase{
     public static function getInstance(): self{
     	return self::$instance;
     }
-    public static function getMessage(string $message = ""){
+    public static function getMessage(string $message = null){
     	$msg = self::$instance->messages->get($message);
       if($msg != null) {
       $finalMessage = str_replace("&", "§", TextFormat::ESCAPE, $msg);
