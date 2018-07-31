@@ -133,18 +133,17 @@ class Arena{
 		$player->getInventory()->clearAll();
 		
 		// Give sword, and food
-		#$player->getInventory()->addItem(Item::get(ITEM::IRON_SWORD));
-		#$player->getInventory()->addItem(Item::get(ITEM::BREAD));
-		#$player->getInventory()->setItemInHand(Item::get(ITEM::IRON_SWORD), $player);
-		$player->getInventory()->setItem(0, Item::get(Item::DIAMOND_AXE, 0, 1)->setCustomName('§l§fTrinity Hatchet'));
-		$player->getInventory()->setItem(1, Item::get(Item::BOW, 0, 1)->setCustomName('§l§fAncient Long Bow'));
-		
+		$player->getInventory()->setItem(0, Item::get(Item::DIAMOND_SWORD, 0, 1)->setCustomName('§l§fTrinity Sword'));
+		$player->getInventory()->setItem(1, Item::get(Item::DIAMOND_AXE, 0, 1)->setCustomName('§l§fTrinity Hatchet'));
+		$player->getInventory()->setItem(2, Item::get(Item::BOW, 0, 1)->setCustomName('§l§fAncient Long Bow'));
+		$player->getInventory()->setItem(7, Item::get(466, 0, 5));
+		$player->getInventory()->setItem(8, Item::get(Item::ARROW, 0, 64));
 		
 		// Pur the armor on the player
-		$player->getArmorInventory()->setHelmet(Item::get(302, 0, 1));
-		$player->getArmorInventory()->setChestplate(Item::get(303, 0, 1));
-		$player->getArmorInventory()->setLeggings(Item::get(304, 0, 1));
-		$player->getArmorInventory()->setBoots(Item::get(305, 0, 1));
+		$player->getArmorInventory()->setHelmet(Item::get(310, 0, 1));
+		$player->getArmorInventory()->setChestplate(Item::get(311, 0, 1));
+		$player->getArmorInventory()->setLeggings(Item::get(312, 0, 1));
+		$player->getArmorInventory()->setBoots(Item::get(313, 0, 1));
 		$player->getArmorInventory()->sendContents($player);
 		
 		// Set his life to 20
