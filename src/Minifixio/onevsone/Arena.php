@@ -133,9 +133,12 @@ class Arena{
 		$player->getInventory()->clearAll();
 		
 		// Give sword, and food
-		$player->getInventory()->addItem(Item::get(ITEM::IRON_SWORD));
-		$player->getInventory()->addItem(Item::get(ITEM::BREAD));
-		$player->getInventory()->setItemInHand(Item::get(ITEM::IRON_SWORD), $player);
+		#$player->getInventory()->addItem(Item::get(ITEM::IRON_SWORD));
+		#$player->getInventory()->addItem(Item::get(ITEM::BREAD));
+		#$player->getInventory()->setItemInHand(Item::get(ITEM::IRON_SWORD), $player);
+		$player->getInventory()->setItem(0, Item::get(Item::DIAMOND_AXE, 0, 1)->setCustomName('§l§fTrinity Hatchet'));
+		$player->getInventory()->setItem(1, Item::get(Item::BOW, 0, 1)->setCustomName('§l§fAncient Long Bow'));
+		
 		
 		// Pur the armor on the player
 		$player->getArmorInventory()->setHelmet(Item::get(302, 0, 1));
@@ -191,8 +194,8 @@ class Arena{
    			$player->getInventory()->setItemInHand(new Item(Item::AIR,0,0));
    			$player->getInventory()->clearAll();
                         $player->getArmorInventory()->clearAll();
-                        $player->getArmorInventory()->sendContents($player);
-   			$player->getInventory()->sendContents($player);
+                        #$player->getArmorInventory()->sendContents($player);
+   			#$player->getInventory()->sendContents($player);
    			$player->getInventory()->sendHeldItem($player);
    		}
    		$this->players = array();
